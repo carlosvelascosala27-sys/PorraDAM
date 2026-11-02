@@ -1,4 +1,4 @@
-# Porra DAM ⚽
+# Porra DAM 
 
 App Android para hacer una porra de los partidos de liga entre la clase.
 Cada jornada, cada persona pronostica el resultado de los partidos; cuando se juegan,
@@ -30,7 +30,7 @@ Miniproyecto del módulo **Programación Multimedia y Dispositivos Móviles (PMD
 
 ## Estado
 
-🚧 Fase 1: interfaz visual (sin lógica todavía).
+Fase 1: interfaz visual (sin lógica todavía).
 
 ## Autor
 

@@ -103,9 +103,16 @@ private fun CabeceraResultados() {
 // Tarjeta de un partido ya jugado, con las esquinas más redondeadas
 @Composable
 private fun ResultadoCard(
-    local: String, inicialesLocal: String, colorLocal: Color, golesLocal: String,
-    visitante: String, inicialesVisitante: String, colorVisitante: Color, golesVisitante: String,
-    porra: String, puntos: String
+    local: String,
+    inicialesLocal: String,
+    colorLocal: Color,
+    golesLocal: String,
+    visitante: String,
+    inicialesVisitante: String,
+    colorVisitante: Color,
+    golesVisitante: String,
+    porra: String,
+    puntos: String
 ) {
     Card(
         modifier = Modifier.fillMaxWidth(),

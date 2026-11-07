@@ -68,14 +68,17 @@ fun PantallaPrincipal(
                             .padding(horizontal = 10.dp, vertical = 4.dp)
                     )
                 },
-                colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
-                    containerColor = if (pestana == Pestanas.JORNADA || pestana == Pestanas.RESULTADOS) Color.Transparent else Color(0xFF14181F),
+                colors = TopAppBarDefaults.topAppBarColors(
+                    containerColor = if (pestana == Pestanas.PERFIL) Color(0xFF14181F) else Color.Transparent,
+                    scrolledContainerColor = Color.Unspecified,
+                    navigationIconContentColor = Color.White,
                     titleContentColor = Color.White,
-                    navigationIconContentColor = Color.White
+                    actionIconContentColor = Color.Unspecified
                 )
             )
         },
-        bottomBar = {
+
+        bottomBar = { // La barra de abajo con los iconos de las pestañas. Se ve en todas las pantallas.
             // NavigationBar es la barra de abajo; dentro creamos un botón por cada pestaña.
             NavigationBar(containerColor = Color.White) {
                 Pestanas.entries.forEach { p ->
@@ -102,7 +105,7 @@ fun PantallaPrincipal(
             Pestanas.JORNADA -> Jornada(alias, Modifier.padding(bottom = innerPadding.calculateBottomPadding()))
             // Igual que Jornada: sin hueco arriba, para que la foto llegue detrás de la barra
             Pestanas.RESULTADOS -> Resultados(Modifier.padding(bottom = innerPadding.calculateBottomPadding()))
-            Pestanas.CLASIFICACION -> Clasificacion(m)
+            Pestanas.CLASIFICACION -> Clasificacion(Modifier.padding(bottom = innerPadding.calculateBottomPadding()))
             Pestanas.PERFIL -> Perfil(m)
         }
     }

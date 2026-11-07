@@ -69,7 +69,7 @@ fun PantallaPrincipal(
                     )
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = if (pestana == Pestanas.PERFIL) Color(0xFF14181F) else Color.Transparent,
+                    containerColor = Color.Transparent,
                     scrolledContainerColor = Color.Unspecified,
                     navigationIconContentColor = Color.White,
                     titleContentColor = Color.White,
@@ -106,7 +106,7 @@ fun PantallaPrincipal(
             // Igual que Jornada: sin hueco arriba, para que la foto llegue detrás de la barra
             Pestanas.RESULTADOS -> Resultados(Modifier.padding(bottom = innerPadding.calculateBottomPadding()))
             Pestanas.CLASIFICACION -> Clasificacion(Modifier.padding(bottom = innerPadding.calculateBottomPadding()))
-            Pestanas.PERFIL -> Perfil(m)
+            Pestanas.PERFIL -> Perfil(Modifier.padding(bottom = innerPadding.calculateBottomPadding()))
         }
     }
 }

@@ -62,11 +62,11 @@ fun Resultados(modifier: Modifier = Modifier) {
             verticalArrangement = Arrangement.spacedBy(12.dp)
         ) {
             item { CabeceraResultados() }
-            item { ResultadoCard("Atlético Marina", "AM", Color(0xFFB3261E), "2", "Racing Costa", "RC", Color(0xFF1565C0), "1", "Tu porra: 2 - 1", "+8") }
-            item { ResultadoCard("UD Huerta", "UH", Color(0xFF2E7D32), "3", "CF Albufera", "CA", Color(0xFFF9A825), "0", "Tu porra: 2 - 0", "+4") }
-            item { ResultadoCard("Real Sierra", "RS", Color(0xFF6A1B9A), "1", "Deportivo Faro", "DF", Color(0xFF00838F), "1", "Tu porra: 1 - 0", "+2") }
-            item { ResultadoCard("SD Olivar", "SO", Color(0xFF558B2F), "2", "CD Salinas", "CS", Color(0xFF37474F), "1", "Tu porra: 1 - 1", "+2") }
-            item { ResultadoCard("Unión Puerto", "UP", Color(0xFFD84315), "1", "Club Almendro", "CL", Color(0xFF4E342E), "0", "Tu porra: 1 - 0", "+8") }
+            item { ResultadoCard("Atlético Madrid", R.drawable.escudo_atletico_madrid, "2", "Real Madrid", R.drawable.escudo_real_madrid, "1", "Tu porra: 2 - 1", "+8") }
+            item { ResultadoCard("FC Barcelona", R.drawable.escudo_barcelona, "3", "Villarreal CF", R.drawable.escudo_villarreal, "0", "Tu porra: 2 - 0", "+4") }
+            item { ResultadoCard("Sevilla FC", R.drawable.escudo_sevilla, "1", "Real Sociedad", R.drawable.escudo_real_sociedad, "1", "Tu porra: 1 - 0", "+2") }
+            item { ResultadoCard("Real Betis", R.drawable.escudo_betis, "2", "Valencia CF", R.drawable.escudo_valencia, "1", "Tu porra: 1 - 1", "+2") }
+            item { ResultadoCard("Athletic Club", R.drawable.escudo_athletic, "1", "Celta de Vigo", R.drawable.escudo_celta, "0", "Tu porra: 1 - 0", "+8") }
             item { TotalJornada() }
         }
     }
@@ -104,12 +104,10 @@ private fun CabeceraResultados() {
 @Composable
 private fun ResultadoCard(
     local: String,
-    inicialesLocal: String,
-    colorLocal: Color,
+    escudoLocal: Int,
     golesLocal: String,
     visitante: String,
-    inicialesVisitante: String,
-    colorVisitante: Color,
+    escudoVisitante: Int,
     golesVisitante: String,
     porra: String,
     puntos: String
@@ -122,11 +120,11 @@ private fun ResultadoCard(
         Row(Modifier.padding(18.dp), verticalAlignment = Alignment.CenterVertically) {
             Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(6.dp)) {
                 Row(verticalAlignment = Alignment.CenterVertically) {
-                    FilaEquipo(local, inicialesLocal, colorLocal, Modifier.weight(1f))
+                    FilaEquipo(local, escudoLocal, Modifier.weight(1f))
                     Text(golesLocal, fontWeight = FontWeight.Bold)
                 }
                 Row(verticalAlignment = Alignment.CenterVertically) {
-                    FilaEquipo(visitante, inicialesVisitante, colorVisitante, Modifier.weight(1f))
+                    FilaEquipo(visitante, escudoVisitante, Modifier.weight(1f))
                     Text(golesVisitante, fontWeight = FontWeight.Bold)
                 }
                 // Etiqueta verde con mi pronóstico

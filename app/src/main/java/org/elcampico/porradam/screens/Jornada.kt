@@ -1,3 +1,4 @@
+
 package org.elcampico.porradam.screens
 
 import androidx.compose.foundation.Image
@@ -82,11 +83,11 @@ fun Jornada(alias: String, modifier: Modifier = Modifier) {
                 contentPadding = PaddingValues(12.dp),
                 verticalArrangement = Arrangement.spacedBy(8.dp)
             ) {
-                item { PartidoCard("Atlético Marina", "AM", Color(0xFFB3261E), "2", "Racing Costa", "RC", Color(0xFF1565C0), "1") }
-                item { PartidoCard("UD Huerta", "UH", Color(0xFF2E7D32), "3", "CF Albufera", "CA", Color(0xFFF9A825), "0") }
-                item { PartidoCard("Real Sierra", "RS", Color(0xFF6A1B9A), "1", "Deportivo Faro", "DF", Color(0xFF00838F), "1") }
-                item { PartidoCard("SD Olivar", "SO", Color(0xFF558B2F), "2", "CD Salinas", "CS", Color(0xFF37474F), "1") }
-                item { PartidoCard("Unión Puerto", "UP", Color(0xFFD84315), "1", "Club Almendro", "CL", Color(0xFF4E342E), "0") }
+                item { PartidoCard("Atlético Madrid", R.drawable.escudo_atletico_madrid, "2", "Real Madrid", R.drawable.escudo_real_madrid, "1") }
+                item { PartidoCard("FC Barcelona", R.drawable.escudo_barcelona, "3", "Villarreal CF", R.drawable.escudo_villarreal, "0") }
+                item { PartidoCard("Sevilla FC", R.drawable.escudo_sevilla, "1", "Real Sociedad", R.drawable.escudo_real_sociedad, "1") }
+                item { PartidoCard("Real Betis", R.drawable.escudo_betis, "2", "Valencia CF", R.drawable.escudo_valencia, "1") }
+                item { PartidoCard("Athletic Club", R.drawable.escudo_athletic, "1", "Celta de Vigo", R.drawable.escudo_celta, "0") }
             }
 
             // onClick vacío: Compose obliga a ponerlo, pero no hace nada

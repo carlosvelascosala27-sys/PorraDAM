@@ -48,6 +48,7 @@ fun PantallaBienvenida(
     onEntrar: (alias: String) -> Unit,
     modifier: Modifier = Modifier
 ) {
+    var codigo by rememberSaveable { mutableStateOf("") }
     var alias by rememberSaveable { mutableStateOf("") }
 
     Box(modifier.fillMaxSize()) {
@@ -103,7 +104,9 @@ fun PantallaBienvenida(
 
             FormularioEntrada(
                 alias = alias,
+                codigo = codigo,
                 onAliasChange = { alias = it },
+                onCodigoChange = { codigo = it },
                 onEntrar = { onEntrar(alias) },
                 modifier = Modifier.fillMaxWidth()
             )
@@ -114,7 +117,9 @@ fun PantallaBienvenida(
 @Composable
 fun FormularioEntrada(
     alias: String,
+    codigo: String,
     onAliasChange: (String) -> Unit,
+    onCodigoChange: (String) -> Unit,
     onEntrar: () -> Unit,
     modifier: Modifier = Modifier
 ) {
@@ -164,32 +169,36 @@ fun FormularioEntrada(
 
             Spacer(modifier = Modifier.height(12.dp))
 
-            Text(
-                "CÓDIGO DEL GRUPO",
-                color = Color.Black,
-                fontFamily = Montserrat,
-                fontWeight = FontWeight.Bold,
-                fontSize = 14.sp
-            )
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .border(1.dp, Color.Black, RoundedCornerShape(8.dp)),
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                Icon(
-                    modifier = Modifier.size(60.dp).padding(15.dp),
-                    painter = painterResource(R.drawable.group),
-                    contentDescription = null,
-                    tint = Color.Black
-                )
-                Text(
-                    "Código del grupo",
+            OutlinedTextField(
+                value = codigo,
+                onValueChange = onCodigoChange,
+                modifier = Modifier.fillMaxWidth(),
+                singleLine = true,
+                shape = RoundedCornerShape(8.dp),
+                placeholder = {
+                    Text("Escribe tu código de grupo", fontFamily = Montserrat)
+                },
+                leadingIcon = {
+                    Icon(
+                        painter = painterResource(R.drawable.group),
+                        contentDescription = null,
+                        tint = Color.Black,
+                        modifier = Modifier.size(24.dp)
+                    )
+                },
+                textStyle = TextStyle(
                     fontFamily = Montserrat,
                     fontWeight = FontWeight.Bold,
-                    fontSize = 17.sp
+                    fontSize = 17.sp,
+                    color = Color.Black
+                ),
+                colors = OutlinedTextFieldDefaults.colors(
+                    focusedBorderColor = Color.Black,
+                    unfocusedBorderColor = Color.Black,
+                    cursorColor = Color.Black
                 )
-            }
+            )
+
 
             Spacer(modifier = Modifier.height(24.dp))
 
